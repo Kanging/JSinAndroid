@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSinAndroid</title>
+    <script>
+         function testJS1(){
+            alert("Android调用了JS的callJS1不带参数的方法");
+         }
+
+         function testJS(result){
+            alert("Android调用了JS的callJS带参数的方法： "+result);
+         }
+
+         function testAndroid(){
+            test.hello("方式1：js调用了android中的testAndroid带参数的方法");
+         }
+         function testAndroid1(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://webview?arg1=111&arg2=222";
+         }
+      </script>
+</head>
+<body>
+<button type="button" id="button1" onclick="testAndroid()">方式1调用Android带参数的方法</button>
+<button type="button" id="button2" onclick="testAndroid1()">方式2调用Android带参数的方法</button>
+</body>
+</html>
